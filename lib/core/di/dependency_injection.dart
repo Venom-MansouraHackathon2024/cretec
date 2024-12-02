@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:tranquilo_app/features/survey/data/api/classification_model_api_call.dart';
 
 import '../../features/auth/forget_password/data/repo/forget_password_repo.dart';
 import '../../features/auth/forget_password/logic/forget_password_cubit/forget_password_cubit.dart';
@@ -49,6 +50,7 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<UserProfileRepo>(() => UserProfileRepo(getIt()));
   getIt.registerFactory<UserProfileCubit>(() => UserProfileCubit(getIt()));
   //survey
+  getIt.registerLazySingleton<ClassificationModelApiService>(() => ClassificationModelApiService(dio));
   getIt.registerLazySingleton<SurveyRepo>(() => SurveyRepo(getIt()));
   getIt.registerLazySingleton<SurveyCubit>(() => SurveyCubit(getIt()));
 

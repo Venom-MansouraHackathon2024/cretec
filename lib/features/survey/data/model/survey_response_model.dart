@@ -5,7 +5,7 @@ part 'survey_response_model.g.dart';
 @JsonSerializable()
 class SurveyResponseModel {
   @JsonKey(name: 'Concrete_Compressive_Strength')
-  final String concreteCompressiveStrength;
+  final double concreteCompressiveStrength;
   final int statusCode;
 
   SurveyResponseModel({

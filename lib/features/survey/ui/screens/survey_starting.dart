@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tranquilo_app/core/helpers/extensions.dart';
 import 'package:tranquilo_app/core/routing/routes.dart';
 import 'package:tranquilo_app/core/theming/colors_manger.dart';
+import 'package:tranquilo_app/core/theming/font_weight_helper.dart';
 import 'package:tranquilo_app/core/theming/styles.dart';
 import 'package:tranquilo_app/core/helpers/spacing.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,42 +18,44 @@ class SurveyStarting extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              verticalSpace(40),
-              Text(
-                'Let’s start GAD survey',
-                style: TextStyles.font20JetBlackSemiBold,
-              ),
-              verticalSpace(32),
-              SvgPicture.asset(
-                'assets/svgs/survey_start.svg',
-                width: 250.w,
-                height: 290.h,
-                fit: BoxFit.contain,
-              ),
-              verticalSpace(32),
-              Text(
-                'This questionnaire will help us assess the\nquality of your concrete and provide\ntailored recommendations for improving\nits compressive strength',
-                textAlign: TextAlign.center,
-                style: TextStyles.font14JetBlackMedium.copyWith(color: ColorsManager.darkGrey),
-              ),
-              verticalSpace(30),
-              AppTextButton(
-                textButton: 'Start',
-                onPressed: () {
-                  context.pushNamed(Routes.surveyScreens);
-                },
-              ),
-              verticalSpace(48),
-              Text(
-                "By clicking 'Start' you agree to our Terms of\nService & Privacy Policy.",
-                textAlign: TextAlign.center,
-                style: TextStyles.font12DarkGreyLight,
-              ),
-              verticalSpace(10),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                verticalSpace(40),
+                Text(
+                  'Concrete compressive strength',
+                  style: TextStyles.font18JetBlackMedium.copyWith(fontWeight: FontWeightHelper.bold),
+                ),
+                verticalSpace(32),
+                SvgPicture.asset(
+                  'assets/svgs/survey_start.svg',
+                  width: 250.w,
+                  height: 290.h,
+                  fit: BoxFit.contain,
+                ),
+                verticalSpace(32),
+                Text(
+                  'This questionnaire will help us assess the\nquality of your concrete and provide\ntailored recommendations for improving\nits compressive strength',
+                  textAlign: TextAlign.center,
+                  style: TextStyles.font14JetBlackMedium.copyWith(color: ColorsManager.darkGrey),
+                ),
+                verticalSpace(30),
+                AppTextButton(
+                  textButton: 'Start',
+                  onPressed: () {
+                    context.pushNamed(Routes.surveyScreens);
+                  },
+                ),
+                verticalSpace(48),
+                Text(
+                  "By clicking 'Start' you agree to our Terms of\nService & Privacy Policy.",
+                  textAlign: TextAlign.center,
+                  style: TextStyles.font12DarkGreyLight,
+                ),
+                verticalSpace(10),
+              ],
+            ),
           ),
         ),
       ),

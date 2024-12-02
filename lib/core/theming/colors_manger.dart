@@ -9,7 +9,7 @@ class ColorsManager {
   static const Color lightGreyBlue = Color(0xFFDEE2E6);
   static const Color lightSilver = Color(0xFFD9D9D9);
   static const Color lighterSilver = Color(0xFFD1E1F2);
-  static const Color containerSilver = Color(0xFFD7D7D7);
+  static const Color containerSilver = Color(0xFFE7E9EB);
   static const Color lightGrey = Color(0xFFAEAEAE);
   static const Color white = Color(0xFFFFFFFF);
   static const Color black = Color(0xFF000000);

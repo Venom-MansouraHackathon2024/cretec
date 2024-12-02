@@ -10,7 +10,7 @@ SurveyResponseModel _$SurveyResponseModelFromJson(Map<String, dynamic> json) =>
     SurveyResponseModel(
       statusCode: (json['statusCode'] as num).toInt(),
       concreteCompressiveStrength:
-          json['Concrete_Compressive_Strength'] as String,
+          (json['Concrete_Compressive_Strength'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$SurveyResponseModelToJson(

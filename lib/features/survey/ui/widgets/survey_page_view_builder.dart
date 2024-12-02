@@ -39,62 +39,38 @@ class _SurveyPageViewBuilderState extends State<SurveyPageViewBuilder> {
       'controller': null,
     },
     {
-      'question': 'How many days was the concrete left to dry?',
-      'type': 'mcq',
-      //'answers': ['Male', 'Female', 'Other'],
-      'selectedAnswer': null,
-    },
-    {
-      'question': 'What is your BMI?',
+      'question': 'What is the amount of blast furnace slag used (kg/m³) ?',
       'type': 'input',
-      'controller': null, // this will use _bmiController later
-    },
-    {
-      'question': 'WHO BMI classification',
-      'type': 'mcq',
-      'answers': ['Underweight', 'Normal', 'Overweight', 'Obesity'],
       'selectedAnswer': null,
     },
     {
-      'question': 'How often do you feel depressed?',
-      'type': 'mcq',
-      'answers': ['1', '2', '3', '4', '5'],
+      'question': 'What is the amount of fly ash used (kg/m³) ?',
+      'type': 'input',
+      'controller': null,
+    },
+    {
+      'question': 'What is the amount of water used  (kg/m³)?',
+      'type': 'input',
       'selectedAnswer': null,
     },
     {
-      'question': 'Have you ever been diagnosed with depression?',
-      'type': 'mcq',
-      'answers': ['Yes', 'No'],
+      'question': 'What is the amount of superplasticizer used (kg/m³)?',
+      'type': 'input',
       'selectedAnswer': null,
     },
     {
-      'question': 'Are you currently receiving treatment for depression?',
-      'type': 'mcq',
-      'answers': ['Yes', 'No'],
+      'question': 'What is the amount of coarse aggregate used  (kg/m³)',
+      'type': 'input',
       'selectedAnswer': null,
     },
     {
-      'question': 'How often do you feel anxious?',
-      'type': 'mcq',
-      'answers': ['1', '2', '3', '4', '5'],
+      'question': 'What is the amount of fine aggregate used  (kg/m³)?',
+      'type': 'input',
       'selectedAnswer': null,
     },
     {
-      'question': 'Have you ever been diagnosed with anxiety?',
-      'type': 'mcq',
-      'answers': ['Yes', 'No'],
-      'selectedAnswer': null,
-    },
-    {
-      'question': 'Are you currently receiving treatment for anxiety?',
-      'type': 'mcq',
-      'answers': ['Yes', 'No', 'Maybe'],
-      'selectedAnswer': null,
-    },
-    {
-      'question': 'How often do you feel sleepy during the day?',
-      'type': 'mcq',
-      'answers': ['1', '2', '3', '4', '5'],
+      'question': 'How many days was the concrete left to dry?',
+      'type': 'input',
       'selectedAnswer': null,
     },
   ];
@@ -102,7 +78,6 @@ class _SurveyPageViewBuilderState extends State<SurveyPageViewBuilder> {
   @override
   void initState() {
     super.initState();
-    // Assign controllers for the text input questions
     _surveyData[0]['controller'] = _cementController;
     _surveyData[1]['controller'] = _blastFurnaceSlagController;
     _surveyData[2]['controller'] = _flyAshController;

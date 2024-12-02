@@ -19,7 +19,7 @@ class SurveyResult extends StatefulWidget {
 }
 
 class _SurveyResultState extends State<SurveyResult> {
-  String _anxietyLevel = 'unknown';
+  double _concreteStrength = 0.0;
 
   @override
   void initState() {
@@ -33,7 +33,7 @@ class _SurveyResultState extends State<SurveyResult> {
       final Map<String, dynamic> jsonMap = jsonDecode(resultJson);
       final surveyResult = SurveyResponseModel.fromJson(jsonMap);
       setState(() {
-        _anxietyLevel = surveyResult.concreteCompressiveStrength;
+        _concreteStrength = surveyResult.concreteCompressiveStrength;
       });
     } else {
       debugPrint('No survey result found in SharedPreferences');
@@ -50,7 +50,8 @@ class _SurveyResultState extends State<SurveyResult> {
             children: [
               verticalSpace(40),
               Text(
-                'Survey Results',
+                'Concrete compressive strength Result',
+                textAlign: TextAlign.center,
                 style: TextStyles.font20JetBlackSemiBold,
               ),
               verticalSpace(5),
@@ -62,20 +63,17 @@ class _SurveyResultState extends State<SurveyResult> {
               ),
               verticalSpace(16),
               Text(
-                'Your anxiety level is $_anxietyLevel, here\nare some recommendations:',
+                'The final compressive strength of the concrete (in MPa)',
+                textAlign: TextAlign.center,
                 style: TextStyles.font16JetBlackMedium,
               ),
               verticalSpace(12),
-              const ListTileRecommend(
-                icon: 'assets/svgs/routine.svg',
-                text:
-                    'Check your personalized routine to manage your anxiety level',
+              Text(
+                'Concrete Compressive Strength\n=$_concreteStrength',
+                textAlign: TextAlign.start,
+                style: TextStyles.font14JetBlackMedium,
               ),
-              const ListTileRecommend(
-                icon: 'assets/svgs/community.svg',
-                text: 'Join our community forum to connect with others',
-              ),
-              verticalSpace(20),
+              verticalSpace(40),
               AppTextButton(
                 textButton: 'Continue to Home',
                 onPressed: () {

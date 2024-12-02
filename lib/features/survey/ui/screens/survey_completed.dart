@@ -20,7 +20,7 @@ class SurveyCompleted extends StatelessWidget {
           children: [
             verticalSpace(40),
             Text(
-              'GAD Survey',
+              'Concrete compressive strength',
               style: TextStyles.font20JetBlackSemiBold,
             ),
             verticalSpace(32),
