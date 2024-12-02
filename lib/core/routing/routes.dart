@@ -18,4 +18,6 @@ class Routes {
   static const String categoryDetailsScreen = '/categoryDetailsScreen';
   static const String cartScreen = '/cartScreen';
   static const String checkOutScreen = '/checkOutScreen';
+  static const String orderSuccessScreen = '/orderSuccessScreen';
+  static const String pointsRewardScreen = '/pointsRewardScreen';
 }

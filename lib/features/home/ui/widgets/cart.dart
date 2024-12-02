@@ -146,10 +146,11 @@ class MyCardScreen extends StatelessWidget {
             ),
             verticalSpace(50),
             AppTextButton(
-                onPressed: () {
-                  context.pushNamed(Routes.checkOutScreen);
-                },
-                textButton: "Checkout")
+              onPressed: () {
+                context.pushNamed(Routes.checkOutScreen);
+              },
+              textButton: "Checkout",
+            ),
           ],
         ),
       ),

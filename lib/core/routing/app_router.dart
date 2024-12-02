@@ -4,6 +4,8 @@ import 'package:tranquilo_app/features/home/data/repo/product_repo.dart';
 import 'package:tranquilo_app/features/home/logic/product_cubit.dart';
 import 'package:tranquilo_app/features/home/ui/widgets/cart.dart';
 import 'package:tranquilo_app/features/home/ui/widgets/checkout.dart';
+import 'package:tranquilo_app/features/home/ui/widgets/order_success.dart';
+import 'package:tranquilo_app/features/home/ui/widgets/points_reward.dart';
 import 'package:tranquilo_app/features/home/ui/widgets/product_details.dart';
 import '../../features/auth/forget_password/logic/forget_password_cubit/forget_password_cubit.dart';
 import '../../features/auth/forget_password/ui/forget_password_screen.dart';
@@ -143,6 +145,14 @@ class AppRouter {
       case Routes.checkOutScreen:
         return MaterialPageRoute(
           builder: (_) => const CheckoutScreen(),
+        );
+      case Routes.orderSuccessScreen:
+        return MaterialPageRoute(
+          builder: (_) => const OrderSuccess(),
+        );
+      case Routes.pointsRewardScreen:
+        return MaterialPageRoute(
+          builder: (_) => const PointsReward(),
         );
       default:
         return MaterialPageRoute(

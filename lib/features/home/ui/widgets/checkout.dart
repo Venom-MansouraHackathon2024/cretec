@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:tranquilo_app/core/helpers/extensions.dart';
 import 'package:tranquilo_app/core/helpers/spacing.dart';
 import 'package:tranquilo_app/core/theming/colors_manger.dart';
 import 'package:tranquilo_app/core/theming/styles.dart';
 import 'package:tranquilo_app/core/widgets/app_text_button.dart';
+
+import '../../../../core/routing/routes.dart';
 
 class CheckoutScreen extends StatelessWidget {
   const CheckoutScreen({super.key});
@@ -14,7 +17,8 @@ class CheckoutScreen extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.white,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_rounded, color: ColorsManager.oceanBlue),
+          icon: const Icon(Icons.arrow_back_ios_rounded,
+              color: ColorsManager.oceanBlue),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -26,7 +30,8 @@ class CheckoutScreen extends StatelessWidget {
         centerTitle: true,
         actions: [
           IconButton(
-            icon: const Icon(Icons.shopping_cart, color: ColorsManager.oceanBlue),
+            icon:
+                const Icon(Icons.shopping_cart, color: ColorsManager.oceanBlue),
             onPressed: () {
               // Navigate to cart screen
             },
@@ -95,7 +100,12 @@ class CheckoutScreen extends StatelessWidget {
               ],
             ),
             const Spacer(),
-            AppTextButton(onPressed: (){}, textButton: "Pay Out"),
+            AppTextButton(
+              onPressed: () {
+                context.pushNamed(Routes.orderSuccessScreen);
+              },
+              textButton: "Pay Out",
+            ),
             verticalSpace(30),
           ],
         ),
