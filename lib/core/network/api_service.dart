@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
+import 'package:tranquilo_app/features/home/data/model/product_response_model.dart';
 import '../../features/auth/forget_password/data/model/forget_password_request_model.dart';
 import '../../features/auth/forget_password/data/model/forget_password_response_model.dart';
 import '../../features/auth/login/data/model/login_request_body.dart';
@@ -44,6 +45,9 @@ abstract class ApiService {
   Future<ResetPasswordResponseModel> resetPassword(
     @Body() ResetPasswordRequestModel resetPasswordRequestModel,
   );
+
+  @GET(ApiConstants.product)
+  Future<GetProductsResponseBody> getProducts();
 
   @GET("${ApiConstants.profile}{email}")
   Future<ProfileResponseModel> fetchUserProfile(@Path("email") String email);

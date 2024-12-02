@@ -11,6 +11,7 @@ class ApiConstants {
   static const String resetPassword = "Account/reset-password";
   static const String profile = "Profile/UserEmail/";
   static const String delete = "Profile/Email/";
+  static const String product = "Product";
   static const String predict = 'predict';
 
 }

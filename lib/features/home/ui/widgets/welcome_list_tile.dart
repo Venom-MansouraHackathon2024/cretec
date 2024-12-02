@@ -44,7 +44,7 @@ class _WelcomeListTileState extends State<WelcomeListTile> {
       ),
       trailing: InkWell(
         onTap: () {
-          context.pushNamed(Routes.notificationsScreen);
+          //context.pushNamed(Routes.notificationsScreen);
         },
         child: CircleAvatar(
           radius: 18.r,

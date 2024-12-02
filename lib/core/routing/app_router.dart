@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tranquilo_app/features/home/data/repo/product_repo.dart';
+import 'package:tranquilo_app/features/home/logic/product_cubit.dart';
+import 'package:tranquilo_app/features/home/ui/widgets/cart.dart';
+import 'package:tranquilo_app/features/home/ui/widgets/checkout.dart';
+import 'package:tranquilo_app/features/home/ui/widgets/product_details.dart';
 import '../../features/auth/forget_password/logic/forget_password_cubit/forget_password_cubit.dart';
 import '../../features/auth/forget_password/ui/forget_password_screen.dart';
 import '../../features/auth/login/logic/login_cubit/login_cubit.dart';
@@ -30,7 +35,6 @@ import '../../features/auth/otp/ui/otp_screen.dart';
 import '../../features/auth/login/ui/login_screen.dart';
 
 class AppRouter {
-
   Route generateRoute(RouteSettings settings) {
     final arguments = settings.arguments;
     switch (settings.name) {
@@ -77,14 +81,19 @@ class AppRouter {
         );
       case Routes.appLayout:
         return MaterialPageRoute(
-          builder: (_) => const AppLayout(),
+          builder: (_) => BlocProvider(
+            create: (context) => ProductsCubit(
+              ProductRepo(getIt<ApiService>()),
+            ),
+            child: const AppLayout(),
+          ),
         );
       case Routes.editProfileScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) =>
-            UserProfileCubit(UserProfileRepo(getIt<ApiService>()))
-              ..fetchUserProfile(),
+                UserProfileCubit(UserProfileRepo(getIt<ApiService>()))
+                  ..fetchUserProfile(),
             child: const EditProfileScreen(),
           ),
         );
@@ -122,6 +131,18 @@ class AppRouter {
                 SurveyCubit(SurveyRepo(getIt<ClassificationModelApiService>())),
             child: const SurveyResult(),
           ),
+        );
+      case Routes.categoryDetailsScreen:
+        return MaterialPageRoute(
+          builder: (_) => const ProductDetailScreen(),
+        );
+      case Routes.cartScreen:
+        return MaterialPageRoute(
+          builder: (_) => const MyCardScreen(),
+        );
+      case Routes.checkOutScreen:
+        return MaterialPageRoute(
+          builder: (_) => const CheckoutScreen(),
         );
       default:
         return MaterialPageRoute(
